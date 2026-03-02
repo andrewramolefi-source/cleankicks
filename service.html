@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cleankicks | Professional Shoe Care & Restoration</title>
+    
+    <!-- Open Graph for WhatsApp Optimization -->
+    <meta property="og:title" content="Cleankicks: Your Shoes, Reborn.">
+    <meta property="og:description" content="Professional sneaker cleaning and leather restoration. We bring your favorite pairs back to life. Book a pickup today!">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&q=80&w=1000">
+    
+    <!-- Fonts & Icons -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;800&display=swap');
+        
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        
+        .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.904);
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-gradient {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1556906781-9a412961c28c?auto=format&fit=crop&q=80&w=1600');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .sticky-cta {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Prevent scrolling when mobile menu is open */
+        .menu-open { overflow: hidden; }
+    </style>
+</head>
+<body class="bg-white-50 text-gray-900">
+
+   <!-- Navigation -->
+    <nav class="glass-nav fixed w-full z-50 px-6 py-3 shadow-sm">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <!-- Left: Logo -->
+            <div class="flex items-center flex-1">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <img src="https://res.cloudinary.com/dykgraurr/image/upload/Cleankickslogo_xhzm0j" alt="Logo" width="50" class="logo" onerror="this.style.display='none'">
+                    <div class="text-2xl font-800 tracking-tighter text-blue-600">CLEAN<span class="text-gray-900">KICKS</span></div>
+                </a>
+            </div>
+
+            <!-- Center: Desktop Links -->
+            <div class="hidden md:flex flex-1 justify-center space-x-8 font-medium">
+                <a href="index.html" class="hover:text-blue-600 transition">Home</a>
+                <a href="about.html" class="hover:text-blue-600 transition">About</a>
+                <a href="service.html" class="text-blue-600">Services</a>
+            </div>
+
+            <!-- Right: Desktop CTA -->
+            <div class="hidden md:flex flex-1 justify-end">
+                <a href="index.html#booking" class="bg-blue-600 text-white px-6 py-2 rounded-full font-bold text-sm hover:bg-blue-700 transition">Book Now</a>
+            </div>
+
+            <!-- Mobile Menu Btn -->
+            <div class="md:hidden flex flex-1 justify-end">
+                <button id="mobile-menu-btn" class="text-2xl focus:outline-none"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-[100] flex-col items-center justify-center space-y-8 text-2xl font-bold hidden">
+        <button id="close-menu" class="absolute top-6 right-6 text-3xl focus:outline-none">&times;</button>
+        <a href="index.html" class="hover:text-blue-600">Home</a>
+        <a href="about.html" class="hover:text-blue-600">About</a>
+        <a href="service.html" class="text-blue-600">Services</a>
+        <a href="index.html#booking" class="bg-blue-600 text-white px-8 py-3 rounded-full" onclick="toggleMenu()">Book Now</a>
+    </div>
+
+    <!-- Header Section -->
+    <section class="pt-32 pb-16 px-6 bg-gray-900 text-white text-center">
+        <div class="max-w-3xl mx-auto">
+            <h1 class="text-4xl md:text-6xl font-800 mb-6">The Science of <span class="text-blue-400">Fresh</span></h1>
+            <p class="text-gray-400 text-lg">Every pair of shoes is unique. We utilize material-specific techniques to ensure the longevity and look of your investment.</p>
+        </div>
+    </section>
+
+    <!-- Services Detail List -->
+    <section class="py-20 px-6 max-w-6xl mx-auto space-y-24">
+        
+        <!-- Service 1 Deep Wash -->
+        <div class="flex flex-col md:flex-row gap-12 items-center service-card fade-in">
+            <div class="w-full md:w-1/2 overflow-hidden rounded-3xl shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&q=80&w=800" class="service-img w-full h-96 object-cover" alt="Basic Revive">
+            </div>
+            <div class="w-full md:w-1/2">
+                <div class="text-blue-600 font-bold tracking-widest uppercase mb-2">Essential Care</div>
+                <h2 class="text-3xl font-800 mb-4">Deep Wash</h2>
+                <p class="text-gray-600 mb-6 leading-relaxed">Our signature Deepwash is a full-detail clean designed to refresh your entire sneaker. We carefully clean the tongue, collar, midsole, outsole, inner sole, and laces — removing built-up dirt and restoring your pair to a crisp, refreshed finish.</p>
+                <div class="grid grid-cols-2 gap-4 mb-8">
+                    <div class="flex items-center space-x-2 text-sm font-medium"><i class="fas fa-check-circle text-blue-500"></i> <span>Upper Tongue Scrub</span></div>
+                    <div class="flex items-center space-x-2 text-sm font-medium"><i class="fas fa-check-circle text-blue-500"></i> <span>Collar Cleaning</span></div>
+                    <div class="flex items-center space-x-2 text-sm font-medium"><i class="fas fa-check-circle text-blue-500"></i> <span>Sole Scrub (Inner, Middle, Outer)</span></div>
+                    <div class="flex items-center space-x-2 text-sm font-medium"><i class="fas fa-check-circle text-blue-500"></i> <span>Anti-Odor spray</span></div>
+                </div>
+                <div class="flex items-center justify-between border-t pt-6">
+                    <span class="text-3xl font-800">R80.00</span>
+                    <span class="text-xs text-gray-400">*Starting price per pair</span>
+                    <a href="index.html#booking" class="bg-gray-900 text-white px-8 py-3 rounded-xl font-bold hover:bg-blue-600 transition">Select This Plan</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service 2 Midsole Whitening -->
+        <div class="flex flex-col md:flex-row-reverse gap-12 items-center service-card fade-in p-8 md:p-12 bg-gray-900 rounded-[3rem] text-white shadow-2xl">
+            <div class="w-full md:w-1/2 overflow-hidden rounded-3xl">
+                <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&q=80&w=800" class="service-img w-full h-96 object-cover" alt="Signature Deep">
+            </div>
+            <div class="w-full md:w-1/2">
+                <div class="text-blue-400 font-bold tracking-widest uppercase mb-2">Our Best Seller</div>
+                <h2 class="text-3xl font-800 mb-4">Midsole Whitening</h2>
+                <p class="text-gray-400 mb-6 leading-relaxed"> Yellowed midsoles can age your entire sneaker. Our unyellowing process removes oxidation and restores the original white pigment, giving your pair a fresher, more premium appearance.</p>
+                <div class="grid grid-cols-2 gap-4 mb-8">
+                    <div class="flex items-center space-x-2 text-sm font-medium"><i class="fas fa-star text-blue-400"></i> <span>Undersole Pick-out</span></div>
+                    <div class="flex items-center space-x-2 text-sm font-medium"><i class="fas fa-star text-blue-400"></i> <span>Insole Detailing</span></div>
+                    <div class="flex items-center space-x-2 text-sm font-medium"><i class="fas fa-star text-blue-400"></i> <span>Deep Mesh Scrub</span></div>
+                </div>
+                <div class="flex items-center justify-between border-t border-gray-800 pt-6">
+                    <span class="text-3xl font-800 text-blue-400">R130.00</span>
+                    <span class="text-xs text-gray-400">*Starting price per pair</span>
+                    <a href="index.html#booking" class="bg-blue-600 text-white px-8 py-3 rounded-xl font-bold hover:bg-white hover:text-gray-900 transition">Select This Plan</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service 3 Suede/Nubuck Restoration -->
+        <div class="flex flex-col md:flex-row gap-12 items-center service-card fade-in">
+            <div class="w-full md:w-1/2 overflow-hidden rounded-3xl shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&q=80&w=800" class="service-img w-full h-96 object-cover" alt="Grail Restore">
+            </div>
+            <div class="w-full md:w-1/2">
+                <div class="text-blue-600 font-bold tracking-widest uppercase mb-2">Collector's Choice</div>
+                <h2 class="text-3xl font-800 mb-4">Suede/Nubuck Restoration</h2>
+                <p class="text-gray-600 mb-6 leading-relaxed">Crafted for delicate materials, this service includes our full Deepwash plus expert suede or nubuck refurbishing and recoloring. We revive texture, restore depth, and bring faded pairs back to life with precision and care.</p>
+                <div class="grid grid-cols-2 gap-4 mb-8">
+                    <div class="flex items-center space-x-2 text-sm font-medium"><i class="fas fa-shield-alt text-blue-500"></i> <span>Deepwash</span></div>
+                    <div class="flex items-center space-x-2 text-sm font-medium"><i class="fas fa-shield-alt text-blue-500"></i> <span>Suede Nap Reset</span></div>
+                    <div class="flex items-center space-x-2 text-sm font-medium"><i class="fas fa-shield-alt text-blue-500"></i> <span>Scuff Removal</span></div>
+                    <div class="flex items-center space-x-2 text-sm font-medium"><i class="fas fa-shield-alt text-blue-500"></i> <span>Recoloring</span></div>
+                </div>
+                <div class="flex items-center justify-between border-t pt-6">
+                    <div class="flex flex-col">
+                        <span class="text-3xl font-800">R160.00</span>
+                        <span class="text-xs text-gray-400">*Starting price per pair</span>
+                    </div>
+                    <a href="index.html#booking" class="bg-gray-900 text-white px-8 py-3 rounded-xl font-bold hover:bg-blue-600 transition">Select this Plan</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service 4 Deep White Sneaker Clense -->
+        <div class="flex flex-col md:flex-row gap-12 items-center service-card fade-in">
+            <div class="w-full md:w-1/2 overflow-hidden rounded-3xl shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&q=80&w=800" class="service-img w-full h-96 object-cover" alt="White Clense">
+            </div>
+            <div class="w-full md:w-1/2">
+                <div class="text-blue-600 font-bold tracking-widest uppercase mb-2">Specialty</div>
+                <h2 class="text-3xl font-800 mb-4">Deep White Sneaker Clense</h2>
+                <p class="text-gray-600 mb-6 leading-relaxed">Over time, white sneakers lose their brightness. Our Whitening service includes a full Deepwash followed by targeted whitening treatment to restore clarity and bring back that sharp, clean look.</p>
+                <div class="grid grid-cols-2 gap-4 mb-8">
+                    <div class="flex items-center space-x-2 text-sm font-medium"><i class="fas fa-shield-alt text-blue-500"></i> <span>Standard Deep Wash</span></div>
+                    <div class="flex items-center space-x-2 text-sm font-medium"><i class="fas fa-shield-alt text-blue-500"></i> <span>Sole Whitening</span></div>
+                </div>
+                <div class="flex items-center justify-between border-t pt-6">
+                    <div class="flex flex-col">
+                        <span class="text-3xl font-800">R100.00</span>
+                        <span class="text-xs text-gray-400">*Starting price per pair</span>
+                    </div>
+                    <a href="index.html#booking" class="bg-gray-900 text-white px-8 py-3 rounded-xl font-bold hover:bg-blue-600 transition">Select this Plan</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service 5 Shoe Shining -->
+        <div class="flex flex-col md:flex-row gap-12 items-center service-card fade-in">
+            <div class="w-full md:w-1/2 overflow-hidden rounded-3xl shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?auto=format&fit=crop&q=80&w=800" class="service-img w-full h-96 object-cover" alt="Shining">
+            </div>
+            <div class="w-full md:w-1/2">
+                <div class="text-blue-600 font-bold tracking-widest uppercase mb-2">The Finish</div>
+                <h2 class="text-3xl font-800 mb-4">Shoe Shining</h2>
+                <p class="text-gray-600 mb-6 leading-relaxed">A professional polishing and shining process designed to enhance leather shoes. We restore depth, richness, and shine — helping you step out looking refined and confident.</p>
+                <div class="grid grid-cols-2 gap-4 mb-8">
+                    <div class="flex items-center space-x-2 text-sm font-medium"><i class="fas fa-shield-alt text-blue-500"></i> <span>Polished Finish</span></div>
+                    <div class="flex items-center space-x-2 text-sm font-medium"><i class="fas fa-shield-alt text-blue-500"></i> <span>Shine Enhancement</span></div>
+                    <div class="flex items-center space-x-2 text-sm font-medium"><i class="fas fa-shield-alt text-blue-500"></i> <span>Dust Removal</span></div>
+                </div>
+                <div class="flex items-center justify-between border-t pt-6">
+                    <div class="flex flex-col">
+                        <span class="text-3xl font-800">R50.00</span>
+                        <span class="text-xs text-gray-400">*Starting price per pair</span>
+                    </div>
+                    <a href="index.html#booking" class="bg-gray-900 text-white px-8 py-3 rounded-xl font-bold hover:bg-blue-600 transition">Select this Plan</a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 px-6">
+        <div class="max-w-7xl mx-auto text-center">
+            <div class="text-2xl font-800 mb-4">@CLEAN<span class="text-blue-400">KICKS</span></div>
+            <p class="text-gray-500 text-sm mb-6">Premium Shoe Care & Restoration Services.</p>
+            <p class="text-gray-400 text-sm mb-6">413 Catfish Crescent, Lawley ext.1.</p>
+
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="https://www.instagram.com/cleankickssneakerlaundry/" class="text-gray-400 hover:text-white"><i class="fab fa-instagram text-xl"></i></a>
+                <a href="https://facebook.com/CleanKicks1" class="text-gray-400 hover:text-white"><i class="fab fa-facebook text-xl"></i></a>
+            </div>
+            <div class="text-xs text-gray-600">&copy; 2026 CleanKicks. All Rights Reserved.</div>
+            <div class="text-xs text-gray-600">Designed by A.Ramolefi, Powered by Tailwind CSS.</div>
+        </div>
+    </footer>
+
+    <!-- Sticky Contact -->
+    <a href="https://wa.me/27659797754" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-2xl flex items-center space-x-2 z-50">
+        <i class="fab fa-whatsapp text-2xl"></i>
+        <span class="hidden md:inline font-bold">Chat with Us</span>
+    </a>
+
+    <script>
+        // Animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Mobile Menu Logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function toggleMenu() {
+            const isOpen = !mobileMenu.classList.contains('hidden');
+            if (isOpen) {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+                document.body.classList.remove('menu-open');
+            } else {
+                mobileMenu.classList.remove('hidden');
+                mobileMenu.classList.add('flex');
+                document.body.classList.add('menu-open');
+            }
+        }
+
+        mobileMenuBtn.addEventListener('click', toggleMenu);
+        closeMenuBtn.addEventListener('click', toggleMenu);
+
+        // Close menu when clicking links
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', toggleMenu);
+        });
+    </script>
+</body>
+</html>

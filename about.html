@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Clean Kicks Professional Shoe Care</title>
+    
+    <!-- Fonts & Icons -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;800&display=swap');
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        
+        .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.904);
+            backdrop-filter: blur(10px);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -9px;
+            top: 5px;
+            width: 18px;
+            height: 18px;
+            background: #2563eb;
+            border-radius: 50%;
+            border: 4px solid #fff;
+        }
+
+        /* Mobile Menu Animation */
+        #mobile-menu {
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+
+    <!-- Navigation -->
+    <nav class="glass-nav fixed w-full z-50 px-6 py-3 shadow-sm">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center flex-1">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <img src="https://res.cloudinary.com/dykgraurr/image/upload/Cleankickslogo_xhzm0j" alt="Logo" width="50" onerror="this.style.display='none'">
+                    <div class="text-2xl font-800 tracking-tighter text-blue-600">CLEAN<span class="text-gray-900">KICKS</span></div>
+                </a>
+            </div>
+            <div class="hidden md:flex flex-1 justify-center space-x-8 font-medium">
+                <a href="index.html" class="hover:text-blue-600 transition">Home</a>
+                <a href="about.html" class="text-blue-600">About</a>
+                <a href="service.html" class="hover:text-blue-600 transition">Services</a>
+            </div>
+            <div class="hidden md:flex flex-1 justify-end">
+                <a href="index.html#booking" class="bg-blue-600 text-white px-6 py-2 rounded-full font-bold text-sm hover:bg-blue-700 transition">Book Now</a>
+            </div>
+            <!-- Hamburger Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-2xl p-2 focus:outline-none"><i class="fas fa-bars"></i></button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-[60] flex flex-col items-center justify-center space-y-8 text-2xl font-bold hidden opacity-0 invisible">
+        <button id="close-menu" class="absolute top-6 right-6 text-3xl p-4 focus:outline-none">&times;</button>
+        <a href="index.html" class="hover:text-blue-600 transition mobile-link">Home</a>
+        <a href="about.html" class="text-blue-600 mobile-link">About</a>
+        <a href="service.html" class="hover:text-blue-600 transition mobile-link">Services</a>
+        <a href="index.html#booking" class="bg-blue-600 text-white px-8 py-3 rounded-full mobile-link">Book Now</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 bg-gray-50 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-4xl md:text-6xl font-800 mb-6 tracking-tight">Restoring Shoes, <br><span class="text-blue-600">Restoring Confidence.</span></h1>
+            <p class="text-lg text-gray-600 leading-relaxed">Founded in 2021, Clean Kicks is more than a sneaker laundry. We are a lifestyle brand built on empowerment, integrity, and community impact.</p>
+        </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="py-20 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div class="fade-in">
+                <h2 class="text-3xl font-800 mb-6">From a Garage to a <span class="text-blue-600">Trusted Brand</span></h2>
+                <p class="text-gray-600 mb-4 leading-relaxed">What started in a small garage in Lawley Extension 1 has grown into a premier professional sneaker laundry service south of Johannesburg. Clean Kicks was established to address a critical market gap: the lack of professional shoe care in township and surrounding communities.</p>
+                <p class="text-gray-600 mb-6 leading-relaxed">After receiving hands-on training from South Africa's first-ever sneaker laundry, we launched with a commitment to innovation and quality. Today, we clean over 100 pairs per month and employ a dedicated team of four professionals.</p>
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="bg-blue-50 p-4 rounded-2xl">
+                        <div class="text-3xl font-800 text-blue-600">100+</div>
+                        <div class="text-sm font-bold text-gray-500 uppercase">Pairs Monthly</div>
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-2xl">
+                        <div class="text-3xl font-800 text-blue-600">4</div>
+                        <div class="text-sm font-bold text-gray-500 uppercase">Team Members</div>
+                    </div>
+                </div>
+            </div>
+            <div class="rounded-3xl overflow-hidden shadow-2xl fade-in">
+                <img src="https://res.cloudinary.com/dykgraurr/image/upload/about_az6ejs" class="w-full h-full object-cover" alt="Workshop">
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="py-20 bg-gray-900 text-white px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16">
+            <div class="fade-in">
+                <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center mb-6">
+                    <i class="fas fa-eye text-xl"></i>
+                </div>
+                <h3 class="text-2xl font-800 mb-4">Our Vision</h3>
+                <p class="text-gray-400 leading-relaxed">To become the leading sneaker care brand that empowers individuals to step confidently into their purpose by unlocking their full potential through time-saving, high-quality services.</p>
+            </div>
+            <div class="fade-in">
+                <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center mb-6">
+                    <i class="fas fa-rocket text-xl"></i>
+                </div>
+                <h3 class="text-2xl font-800 mb-4">Our Mission</h3>
+                <p class="text-gray-400 leading-relaxed">To deliver innovative, efficient, and premium sneaker care solutions that save our clients time and money, allowing them to focus on what truly matters in their growth journey.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="py-20 px-6 bg-white">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl font-800 mb-12 text-center">Our Journey</h2>
+            <div class="border-l-2 border-blue-100 ml-3 space-y-12 pb-10">
+                <div class="relative pl-8 timeline-item fade-in">
+                    <h4 class="font-800 text-xl">2021</h4>
+                    <p class="text-gray-600">Founded in a garage in Lawley Extension 1.</p>
+                </div>
+                <div class="relative pl-8 timeline-item fade-in">
+                    <h4 class="font-800 text-xl">2022</h4>
+                    <p class="text-gray-600">Inaugural School Shoe Drive: Donated 50+ pairs.</p>
+                </div>
+                <div class="relative pl-8 timeline-item fade-in">
+                    <h4 class="font-800 text-xl">2023</h4>
+                    <p class="text-gray-600">Acquired formal shop space for professional operations.</p>
+                </div>
+                <div class="relative pl-8 timeline-item fade-in">
+                    <h4 class="font-800 text-xl">2024</h4>
+                    <p class="text-gray-600">Reached milestone of 100+ pairs cleaned monthly.</p>
+                </div>
+                <div class="relative pl-8 timeline-item fade-in">
+                    <h4 class="font-800 text-xl">2025</h4>
+                    <p class="text-gray-600">Team grew to 4 personnel with expanded service reach.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- School Shoe Drive Details Section -->
+    <section id="drive-details" class="py-24 px-6 bg-gray-50 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-16 items-start">
+                <div class="fade-in">
+                    <span class="text-blue-600 font-bold tracking-widest uppercase text-sm">Community Initiative</span>
+                    <h2 class="text-4xl font-800 mt-2 mb-6">Restoring Dignity Through Every Step</h2>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        Clean Kicks believes that business success is incomplete without community impact. Our <strong>School Shoe Drive</strong> is a cornerstone of our social responsibility strategy, specifically designed to support students in underprivileged communities.
+                    </p>
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-blue-600">
+                                <i class="fas fa-hand-holding-heart"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">The Purpose</h4>
+                                <p class="text-sm text-gray-600">To bridge the gap for children who lack proper school footwear, ensuring they attend school with confidence and a sense of belonging.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-blue-600">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Professional Restoration</h4>
+                                <p class="text-sm text-gray-600">We don't just donate; we restore. Every pair donated undergoes a professional deep wash and leather conditioning to ensure it is in excellent condition.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="initiative-card p-8 rounded-[2.5rem] shadow-xl fade-in border border-gray-200 bg-white">
+                    <h3 class="text-2xl font-800 mb-8">Our Process</h3>
+                    <div class="space-y-8 relative">
+                        <div class="flex gap-6">
+                            <div class="text-3xl font-800 text-blue-200">01</div>
+                            <div>
+                                <h5 class="font-bold text-lg mb-1">Collection</h5>
+                                <p class="text-sm text-gray-600">We collect used school shoes through community drop-off points and corporate partnerships.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="text-3xl font-800 text-blue-200">02</div>
+                            <div>
+                                <h5 class="font-bold text-lg mb-1">Deep Chemical Cleanse</h5>
+                                <p class="text-sm text-gray-600">Shoes are sanitized and treated using professional-grade cleaners to ensure hygiene and longevity.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="text-3xl font-800 text-blue-200">03</div>
+                            <div>
+                                <h5 class="font-bold text-lg mb-1">Distribution</h5>
+                                <p class="text-sm text-gray-600">The restored footwear is donated directly to students in need at local schools south of Johannesburg.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-10 pt-8 border-t border-blue-100">
+                        <p class="text-sm text-blue-800 font-medium mb-4 italic">"A small gesture can lead to a giant leap for a child's future."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--School Shoe Drive Image-->
+    <div class="py-12 px-6 bg-white">
+        <div class="max-w-4xl mx-auto">
+            <img src="https://res.cloudinary.com/dykgraurr/image/upload/shoedrive_image_mr4zwr" class="w-full rounded-3xl shadow-lg fade-in" alt="School Shoe Drive">
+        </div>
+    </div>
+
+    <!-- Social Impact -->
+    <section class="py-20 px-6 bg-blue-600 text-white rounded-t-[3rem]">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-800 mb-6">School Shoe Drive Initiative</h2>
+            <p class="text-lg mb-10 leading-relaxed text-blue-100">Our School Shoe Drive is a natural extension of our mission to restore confidence from the ground up. We believe that a clean, decent pair of shoes can change how a learner walks into a classroom with pride, dignity, and self-belief. Through this initiative, we collect new and gently used school shoes, carefully refurbish them to the highest standard, and donate them to children in need. It’s more than just footwear; it’s about giving young learners the confidence to focus, participate, and perform at their best because when a child feels confident, they show up differently for their future.</p>
+            <a href="https://wa.me/27659797754?text=Hey%20CleanKicks%2C%20how%20can%20I%20support%20your%20school%20shoe%20initiative%3F" target="_blank" class="bg-white text-blue-600 px-8 py-4 rounded-full font-800 hover:bg-gray-100 transition inline-block">Support the Initiative</a>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-12 px-6">
+        <div class="max-w-7xl mx-auto text-center">
+            <div class="text-2xl font-800 mb-4">@CLEAN<span class="text-blue-400">KICKS</span></div>
+            <p class="text-gray-500 text-sm mb-6">Premium Shoe Care & Restoration Services.</p>
+            <p class="text-gray-400 text-sm mb-6">413 Catfish Crescent, Lawley ext.1.</p>
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="https://www.instagram.com/cleankickssneakerlaundry/" class="text-gray-400 hover:text-white"><i class="fab fa-instagram text-xl"></i></a>
+                <a href="https://facebook.com/CleanKicks1" class="text-gray-400 hover:text-white"><i class="fab fa-facebook text-xl"></i></a>
+            </div>
+            <div class="text-xs text-gray-600">&copy; 2026 CleanKicks. All Rights Reserved.</div>
+            <div class="text-xs text-gray-600">Designed by A.Ramolefi, Powered by Tailwind CSS.</div>
+        </div>
+    </footer>
+
+     <!-- Sticky Contact -->
+    <a href="https://wa.me/27659797754" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-2xl flex items-center space-x-2 z-50">
+        <i class="fab fa-whatsapp text-2xl"></i>
+        <span class="hidden md:inline font-bold">Chat with Us</span>
+    </a>
+
+    <script>
+        // Intersection Observer for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Mobile Menu Functionality
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeBtn = document.getElementById('close-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function openMenu() {
+            mobileMenu.classList.remove('hidden');
+            setTimeout(() => {
+                mobileMenu.classList.remove('opacity-0', 'invisible');
+            }, 10);
+            document.body.style.overflow = 'hidden'; // Stop scrolling
+        }
+
+        function closeMenu() {
+            mobileMenu.classList.add('opacity-0', 'invisible');
+            setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+            }, 300);
+            document.body.style.overflow = ''; // Resume scrolling
+        }
+
+        mobileBtn.addEventListener('click', openMenu);
+        closeBtn.addEventListener('click', closeMenu);
+        
+        // Close menu when clicking any link
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+    </script>
+</body>
+</html>
